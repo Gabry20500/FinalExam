@@ -1,0 +1,20 @@
+#==========================================#
+#           CREATED BY SEVERALCODE         #
+#==========================================#
+
+# Visual Studio
+.vs
+*.user
+*.suo
+*.filter
+*.vcxproj.filters
+*.vcxproj
+*.sln
+
+# Project folders
+[Bb]in
+[Bb]inaries
+[Dd]ocs
+[Ii]nt
+[Ii]ntermediate
+
