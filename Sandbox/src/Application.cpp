@@ -18,8 +18,8 @@ void Application::createWindow(unsigned int Width, unsigned int Height, const ch
 
 void Application::initialize()
 {
-	auto background = new gfl::Sprite();
+	/*auto background = new gfl::Sprite();
 	background->renderer->set_texture_source("res/textures/background.png", true, true);
 	background->rect_transform->set_scale(1920, 1080);
-	allEntities.push_back(background);
+	allEntities.push_back(background);*/
 }

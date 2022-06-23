@@ -62,7 +62,7 @@ workspace "FinalExam_GP1_MI_PD_FiorentinoGabriele"
         location "%{wks.location}/Sandbox"
 
         --includes all files in source folder
-        includedirs {"%{wks.location}/Sandbox/src"}
+        includedirs {"%{wks.location}/FrameWork/src"}
 
         postbuildcommands "{COPY} %{wks.location}/ThirdParty/libs/*.dll %{wks.location}/bin/%{cfg.buildcfg}-%{cfg.architecture}"
 

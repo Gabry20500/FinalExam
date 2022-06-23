@@ -1,0 +1,10 @@
+﻿  area2d.cpp
+  game_object.cpp
+  sprite.cpp
+  component.cpp
+  controller.cpp
+  rect_transform.cpp
+  render2d.cpp
+  object.cpp
+  Generating Code...
+  FrameWork.vcxproj -> C:\Users\gabri\Documents\GitHub\FiorentinoGabriele_EndYearExamination\FrameWork\bin\Release\FrameWork.dll
