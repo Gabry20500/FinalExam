@@ -1,9 +1,13 @@
 #pragma once
 
+#include <Classes/game_object.h>
+
 #include <vector>
 #include <SFML/Graphics.hpp>
 
 class Application {
+
+	friend class Controller;
 
 public:
 	Application() : newWindow(nullptr),
@@ -29,7 +33,7 @@ public:
 	bool isRunning()const;
 
 	/// <summary>
-	/// Executes application.
+	/// Execute game loop
 	/// </summary>
 	void run();
 
@@ -56,13 +60,21 @@ public:
 	/// </summary>
 	void enableFixedUpdate();
 	void disableFixedUpdate();
-
+	
+	
+	/// <summary>
+	/// Set milliseconds for fixed update
+	/// </summary>
+	/// <param name="milliseconds"></param>
+	void setMillisecondsForFixedUpdate(float milliseconds);
+	
 	/// <summary>
 	/// Set the color for the background
 	/// </summary>
 	/// <param name="color"></param>
 	void setBackgroundColor(sf::Color color);
 	void setBackgroundColor(float red, float green, float blue, float alpha);
+
 private:
 
 	void initialize();
@@ -83,5 +95,5 @@ private:
 	bool fixedUpdateEnabled;
 	float msForFixedUpdate;
 	sf::Color backgroundColor;
-	//std::vector<GameObject*> allEntities;
+	std::vector<GameObject*> allEntities;
 };
