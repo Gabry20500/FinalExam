@@ -59,6 +59,7 @@ void Application::disableFPSLimit()
 
 void Application::enableFixedUpdate()
 {
+<<<<<<< Updated upstream
 	fixedUpdateEnabled = true;
 }
 void Application::disableFixedUpdate()
@@ -227,3 +228,10 @@ void Application::execute()
 	}
 
 }
+=======
+	/*auto background = new gfl::Sprite();
+	background->renderer->set_texture_source("res/textures/background.png", true, true);
+	background->rect_transform->set_scale(1920, 1080);
+	allEntities.push_back(background);*/
+}
+>>>>>>> Stashed changes

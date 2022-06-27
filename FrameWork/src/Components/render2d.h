@@ -12,12 +12,12 @@ class DECLSPEC Render2d : public Component
 {
 public:
 	Render2d();
-	explicit Render2d(std::string basepath, bool smooth, bool repeat);
+	explicit Render2d(std::string source_path, bool smooth, bool repeat);
 	~Render2d() override;
 
-	void set_texture_source(std::string basepath, bool smooth, bool repeat);
+	void set_texture_source(std::string source_path, bool smooth, bool repeat);
 
 private:
-	sf::Texture* baseTexture;
+	sf::Texture* source;
 };
 #endif
