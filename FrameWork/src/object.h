@@ -2,8 +2,9 @@
 #define OBJECT_H
 
 #include <iostream>
+#include "dll_header.h" 
 
-class Object
+class DECLSPEC Object
 {
 public:
 	Object(const std::string user_Name, bool active = true);

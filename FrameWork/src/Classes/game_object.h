@@ -1,5 +1,5 @@
-#ifndef GAMEOBJECTH
-#define GAMEOBJECTH
+#ifndef GAMEOBJECT_H
+#define GAMEOBJECT_H
 
 #include <string>
 #include <vector>
@@ -7,8 +7,9 @@
 #include "component.h"
 #include "object.h"
 #include "tickable.h"
+#include "dll_header.h" 
 
-class GameObject : public Object, public Tickable
+class DECLSPEC GameObject : public Object, public Tickable
 {
 
 public:
@@ -66,8 +67,6 @@ public:
 		return result;
 	}
 
-
-protected:
 	// Inherited via Tickable
 	virtual void on_fixed_update(const float delta_time) override;
 	virtual void on_update(const float delta_time) override;

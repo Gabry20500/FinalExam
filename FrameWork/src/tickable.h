@@ -1,7 +1,10 @@
-#ifndef TICKABLE
-#define TICKABLE
+#ifndef TICKABLE_H
+#define TICKABLE_H
 
-class Tickable
+#include "dll_header.h" 
+
+
+class DECLSPEC Tickable
 {
 public:
 	bool tickEnabled()const { return tickable; }

@@ -1,5 +1,22 @@
+//Include project classes
 #include "Application.h"
+#include "Drawable.h"
+
+
+
+//Include external libraries
+
+//My FrameWork.dll
+#include <component.h>
+#include <Components/render2d.h>
+#include "Components/controller.h"
+#include <Classes/sprite.h>
+#include <Classes/area2d.h>
+
+//Standart libraries
 #include <iostream>
+//SFML libraries
+#include <SFML/Graphics.hpp>
 
 Application::~Application()
 {
@@ -16,24 +33,66 @@ void Application::createWindow(unsigned int Width, unsigned int Height, const ch
 	}
 }
 
+bool Application::isRunning() const
+{
+	return newWindow->isOpen();
+}
+
+unsigned Application::getFPS() const
+{
+	return 1/pastTime;
+}
+
+void Application::setMaxFPS(unsigned limit)
+{
+	maxFPS = limit;
+}
+
+void Application::enableFPSLimit()
+{
+	fpsLimitEnabled = true;
+}
+void Application::disableFPSLimit()
+{
+	fpsLimitEnabled = false;
+}
+
+void Application::enableFixedUpdate()
+{
+	fixedUpdateEnabled = true;
+}
+void Application::disableFixedUpdate()
+{
+	fixedUpdateEnabled = false;
+}
+
+void Application::setMillisecondsForFixedUpdate(float milliseconds)
+{
+	msForFixedUpdate = milliseconds;
+}
+
+
+
+void Application::setBackgroundColor(sf::Color color)
+{
+	backgroundColor = color;
+}
+
+void Application::setBackgroundColor(sf::Uint8 red, sf::Uint8 green, sf::Uint8 blue, sf::Uint8 alpha)
+{
+	backgroundColor = sf::Color(red, green, blue, alpha);
+}
+
 void Application::initialize()
 {
-<<<<<<< Updated upstream
-	/*auto background = new gfl::Sprite();
-	background->renderer->set_texture_source("res/textures/background.png", true, true);
-	background->rect_transform->set_scale(1920, 1080);
-	allEntities.push_back(background);*/
-}
-=======
-	/*
 	auto background = new Sprite();
 	background->renderer->set_texture_source("res/background/prato.jpg", true, true);
 	background->rectTransform->set_scale(1920, 1080);
-	allEntities.push_back(background);*/
+	allEntities.push_back(background);
 
 	const auto character = new Sprite();
 	character->renderer->set_texture_source("res/Character/player.png", true, false);
-	character->rectTransform->set_scale(120, 120);
+	character->rectTransform->set_scale(64, 64);
 	character->rectTransform->set_position(960 - 32, 540 - 32);
 	character->addComponent(new Controller());
 	allEntities.push_back(character);
@@ -53,32 +112,38 @@ void Application::processInput()
 
 		for each (auto controller in controllers)
 		{
+			sf::Keyboard::Key key1;
+			sf::Keyboard::Key key2;
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 			{
-				controller->on_input(sf::Keyboard::Up);
+				key1 = sf::Keyboard::Up;
 			}
 			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 			{
-				controller->on_input(sf::Keyboard::Down);
+				key1 = sf::Keyboard::Down;
 			}
 			else
 			{
-				controller->on_input(sf::Keyboard::Unknown);
+				key1 = sf::Keyboard::Unknown;
 			}
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) || sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 			{
-				controller->on_input(sf::Keyboard::Left);
+				key2 = sf::Keyboard::Left;
 			}
 			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 			{
-				controller->on_input(sf::Keyboard::Right);
+				key2 = sf::Keyboard::Left;
 			}
 			else
 			{
-				controller->on_input(sf::Keyboard::Unknown);
+				key2 = sf::Keyboard::Unknown;
 			}
+
+			sf::Keyboard::Key inputs[] = { key1, key2 };
+			controller->on_input(inputs);
+
 		}
 	}
 }
@@ -162,4 +227,3 @@ void Application::execute()
 	}
 
 }
->>>>>>> Stashed changes

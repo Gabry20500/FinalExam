@@ -1,15 +1,21 @@
 #pragma once
+#include "time_manager.h"
+
+#include <Classes/game_object.h>
 
 #include <vector>
 #include <SFML/Graphics.hpp>
 
-class Application {
+class Application{
+
+	//friend class Controller;
 
 public:
 	Application() : newWindow(nullptr),
 		maxFPS(0),
 		fpsLimitEnabled(false),
-		backgroundColor(sf::Color::Black) {
+		backgroundColor(sf::Color::Black) 
+	{
 		initialize();
 	}
 	~Application(); 
@@ -29,15 +35,15 @@ public:
 	bool isRunning()const;
 
 	/// <summary>
-	/// Executes application.
+	/// Execute game loop
 	/// </summary>
-	void run();
+	void execute();
 
 	/// <summary>
 	/// Calculate the total frames in one seconds by elapsed time
 	/// </summary>
 	/// <returns>total frames</returns>
-	unsigned getFrameRate()const;
+	unsigned getFPS()const;
 
 	/// <summary>
 	/// Set the maximum number of FPS reachable
@@ -56,13 +62,21 @@ public:
 	/// </summary>
 	void enableFixedUpdate();
 	void disableFixedUpdate();
-
+	
+	
+	/// <summary>
+	/// Set milliseconds for fixed update
+	/// </summary>
+	/// <param name="milliseconds"></param>
+	void setMillisecondsForFixedUpdate(float milliseconds);
+	
 	/// <summary>
 	/// Set the color for the background
 	/// </summary>
 	/// <param name="color"></param>
 	void setBackgroundColor(sf::Color color);
-	void setBackgroundColor(float red, float green, float blue, float alpha);
+	void setBackgroundColor(sf::Uint8 red, sf::Uint8 green, sf::Uint8 blue, sf::Uint8 alpha);
+
 private:
 
 	void initialize();
@@ -74,14 +88,14 @@ private:
 	void updateGameTime();
 
 	sf::RenderWindow* newWindow;
-	//TimeManager tm;
-	sf::Time lastTime, currentTime;
-	float elapsedTime;
+	GameTimeManager tm;
+	sf::Time lastTime, inGameTime;
+	float pastTime;
 	float lag;
 	unsigned maxFPS;
 	bool fpsLimitEnabled;
 	bool fixedUpdateEnabled;
 	float msForFixedUpdate;
 	sf::Color backgroundColor;
-	//std::vector<GameObject*> allEntities;
+	std::vector<GameObject*> allEntities;
 };
