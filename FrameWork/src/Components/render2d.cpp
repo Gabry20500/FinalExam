@@ -1,23 +1,24 @@
 #include "render2d.h"
+#include "Classes/area2d.h"
 
 #include <iostream>
 
 Render2d::Render2d() : Component("Renderer 2D")
 {
-	source = nullptr;
+	baseTexture = nullptr;
 }
 
-Render2d::Render2d(std::string source_path, bool smooth, bool repeat) : Component("Renderer 2D")
+Render2d::Render2d(std::string basepath, bool smooth, bool repeat) : Component("Renderer 2D")
 {
-	source = new sf::Texture();
-	source->create(10, 10);
-	if (!source->loadFromFile(source_path))
+	baseTexture = new sf::Texture();
+	baseTexture->create(10, 10);
+	if (!baseTexture->loadFromFile(basepath))
 	{
-		std::cout<<"Can't load texture at path "<< source_path.c_str()<< "\n";
+		std::cout<<"Can't load texture at path "<< basepath.c_str()<< "\n";
 		return;
 	}
-	source->setSmooth(smooth);
-	source->setRepeated(repeat);
+	baseTexture->setSmooth(smooth);
+	baseTexture->setRepeated(repeat);
 
 	const auto rect = get_owner()->get_component<RectTransform, RectTransform>();
 	if (!rect)
@@ -27,13 +28,35 @@ Render2d::Render2d(std::string source_path, bool smooth, bool repeat) : Componen
 		return;
 	}
 
-	rect->get_transform()->setTexture(source);
+	rect->get_transform()->setTexture(baseTexture);
 }
 
 Render2d::~Render2d()
 {
 }
 
-void Render2d::set_texture_source(std::string source_path, bool smooth, bool repeat)
+void Render2d::set_texture_source(std::string basepath, bool smooth, bool repeat)
 {
+<<<<<<< Updated upstream
+=======
+	delete baseTexture;
+	baseTexture = new sf::Texture();
+	if (!baseTexture->loadFromFile(basepath))
+	{
+		printf("Can't load texture int the path: %s \n", basepath.c_str());
+		return;
+	}
+	
+	baseTexture->setSmooth(smooth);
+	baseTexture->setRepeated(repeat);
+
+	const auto owner = dynamic_cast<Area2d*>(get_owner());
+	if (!owner) {
+		printf("Owner creation failed");
+		system("pause");
+		return;
+	}
+
+	owner->rectTransform->get_transform()->setTexture(baseTexture);
+>>>>>>> Stashed changes
 }

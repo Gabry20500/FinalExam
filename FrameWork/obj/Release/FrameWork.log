@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ﻿  area2d.cpp
   game_object.cpp
   sprite.cpp
@@ -7,4 +8,10 @@
   render2d.cpp
   object.cpp
   Generating Code...
+=======
+﻿  controller.cpp
+C:\Users\gabri\Documents\GitHub\FiorentinoGabriele_EndYearExamination\FrameWork\src\object.h(20,14): warning C4251: 'Object::userName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Object'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xstring(4905): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+     Creating library bin\Release\FrameWork.lib and object bin\Release\FrameWork.exp
+>>>>>>> Stashed changes
   FrameWork.vcxproj -> C:\Users\gabri\Documents\GitHub\FiorentinoGabriele_EndYearExamination\FrameWork\bin\Release\FrameWork.dll

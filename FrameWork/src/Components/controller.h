@@ -13,6 +13,10 @@ class Controller : public Component
 public:
 	Controller ();
 	~Controller () override;
+<<<<<<< Updated upstream
+=======
+	virtual void on_input(sf::Keyboard::Key input);
+>>>>>>> Stashed changes
 
 protected:
 	void on_update(const float delta_time)override;
