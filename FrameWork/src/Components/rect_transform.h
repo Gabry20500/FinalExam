@@ -1,13 +1,14 @@
-#ifndef RECTTRANSFORMH
-#define RECTTRANSFORMH
+#ifndef RECTTRANSFORM_H
+#define RECTTRANSFORM_H
 
 #include <component.h>
 #include <SFML/Graphics.hpp>
+#include "dll_header.h" 
 
 /// <summary>
 /// Set initial position, rotation and scale
 /// </summary>
-class RectTransform : public Component
+class DECLSPEC RectTransform : public Component
 {
 
 public:

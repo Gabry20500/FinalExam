@@ -36,4 +36,5 @@ Render2d::~Render2d()
 
 void Render2d::set_texture_source(std::string source_path, bool smooth, bool repeat)
 {
+
 }

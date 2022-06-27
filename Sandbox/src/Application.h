@@ -1,19 +1,21 @@
 #pragma once
+#include "time_manager.h"
 
 #include <Classes/game_object.h>
 
 #include <vector>
 #include <SFML/Graphics.hpp>
 
-class Application {
+class Application{
 
-	friend class Controller;
+	//friend class Controller;
 
 public:
 	Application() : newWindow(nullptr),
 		maxFPS(0),
 		fpsLimitEnabled(false),
-		backgroundColor(sf::Color::Black) {
+		backgroundColor(sf::Color::Black) 
+	{
 		initialize();
 	}
 	~Application(); 
@@ -35,13 +37,13 @@ public:
 	/// <summary>
 	/// Execute game loop
 	/// </summary>
-	void run();
+	void execute();
 
 	/// <summary>
 	/// Calculate the total frames in one seconds by elapsed time
 	/// </summary>
 	/// <returns>total frames</returns>
-	unsigned getFrameRate()const;
+	unsigned getFPS()const;
 
 	/// <summary>
 	/// Set the maximum number of FPS reachable
@@ -73,7 +75,7 @@ public:
 	/// </summary>
 	/// <param name="color"></param>
 	void setBackgroundColor(sf::Color color);
-	void setBackgroundColor(float red, float green, float blue, float alpha);
+	void setBackgroundColor(sf::Uint8 red, sf::Uint8 green, sf::Uint8 blue, sf::Uint8 alpha);
 
 private:
 
@@ -86,9 +88,9 @@ private:
 	void updateGameTime();
 
 	sf::RenderWindow* newWindow;
-	//TimeManager tm;
-	sf::Time lastTime, currentTime;
-	float elapsedTime;
+	GameTimeManager tm;
+	sf::Time lastTime, inGameTime;
+	float pastTime;
 	float lag;
 	unsigned maxFPS;
 	bool fpsLimitEnabled;

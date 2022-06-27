@@ -1,13 +1,14 @@
-#ifndef RENDERER2DH
-#define RENDERER2DH
+#ifndef RENDERER2D_H
+#define RENDERER2D_H
 
 #include "component.h"
 #include "Components/rect_transform.h"
 #include "Classes/game_object.h"
+#include "dll_header.h" 
 
 #include <SFML/Graphics.hpp>
 
-class Render2d : public Component
+class DECLSPEC Render2d : public Component
 {
 public:
 	Render2d();

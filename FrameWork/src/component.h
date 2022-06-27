@@ -1,10 +1,11 @@
-#ifndef COMPONENTH
-#define COMPONENTH
+#ifndef COMPONENT_H
+#define COMPONENT_H
 
 #include "object.h"
+#include "dll_header.h" 
 #include "tickable.h"
 
-class Component : public Object, public Tickable
+class DECLSPEC Component : public Object, public Tickable
 {
 	friend class GameObject;
 
