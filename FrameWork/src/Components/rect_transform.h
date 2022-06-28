@@ -13,7 +13,9 @@ class DECLSPEC RectTransform : public Component
 
 public:
 	RectTransform();
-	explicit RectTransform(sf::Vector2f position, float rotation, sf::Vector2f scale);
+	explicit RectTransform(sf::Vector2f position,
+							float rotation,
+							sf::Vector2f scale);
 	~RectTransform() override;
 
 	/// <summary>

@@ -38,7 +38,7 @@ Render2d::~Render2d()
 
 void Render2d::set_texture_source(std::string path, bool smooth, bool repeat)
 {
-	if (fount == nullptr)
+	if (fount != nullptr)
 	{
 	delete fount;
 	}
