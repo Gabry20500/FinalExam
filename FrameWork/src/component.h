@@ -1,14 +1,14 @@
 #ifndef COMPONENT_H
 #define COMPONENT_H
 
-#include "object.h"
 #include "dll_header.h" 
+#include "object.h"
 #include "tickable.h"
+#include "Classes/game_object.h"
 
 class DECLSPEC Component : public Object, public Tickable
 {
 	friend class GameObject;
-
 public:
 	Component(const std::string name, const bool is_active = true) : Object(name, is_active) {}
 	virtual ~Component() = default;

@@ -1,5 +1,6 @@
 ﻿  Application.cpp
-C:\Users\gabri\Documents\GitHub\FiorentinoGabriele_EndYearExamination\Sandbox\src\Application.cpp(43,10): warning C4244: 'return': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\gabri\Documents\GitHub\FiorentinoGabriele_EndYearExamination\Sandbox\src\Application.cpp(44,10): warning C4244: 'return': conversion from 'float' to 'unsigned int', possible loss of data
   main.cpp
+  time_manager.cpp
   Generating Code...
   Sandbox.vcxproj -> C:\Users\gabri\Documents\GitHub\FiorentinoGabriele_EndYearExamination\Sandbox\bin\Debug\Sandbox.exe

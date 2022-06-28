@@ -38,10 +38,14 @@ Render2d::~Render2d()
 
 void Render2d::set_texture_source(std::string path, bool smooth, bool repeat)
 {
+	if (fount == nullptr)
+	{
 	delete fount;
+	}
 	fount = new sf::Texture();
 	if (!fount->loadFromFile(path)) {
-		printf("Path loading error [%S]\n", path.c_str());
+
+		printf("Can't load texture at path[%s]\n", path.c_str());
 		return;
 	}
 
@@ -51,6 +55,7 @@ void Render2d::set_texture_source(std::string path, bool smooth, bool repeat)
 	const auto keeper = dynamic_cast<Area2d*>(get_owner());
 	if (!keeper) {
 		printf("Owner not found\n");
+		system("pause");
 		return;
 	}
 

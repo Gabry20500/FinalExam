@@ -7,13 +7,14 @@ InputElaboratorComponent::InputElaboratorComponent() : Component("InputElaborato
 
 InputElaboratorComponent::~InputElaboratorComponent()
 {
-	//delete input;
-	//delete transform;
+	delete input;
+	delete transform;
 }
 
 sf::Vector2f InputElaboratorComponent::getVelocity() const
 {
-	return {xAxis*velocity, yAxis* velocity};
+	auto direction = input->getAxisVector();
+	return {direction.x*velocity, direction.y * velocity};
 }
 
 sf::Vector2f InputElaboratorComponent::getDirectionVect() const
@@ -27,21 +28,11 @@ sf::Vector2f InputElaboratorComponent::getDirectionVect() const
 	return { velocityVect.x / length, velocityVect.y / length };
 }
 
-void InputElaboratorComponent::setXAxis(float x)
-{
-	xAxis = x;
-}
-
-void InputElaboratorComponent::setyAxis(float y)
-{
-	yAxis = y;
-}
-
-/*bool InputElaboratorComponent::motionValid() const
-{
-	return false;
-}
-
 void InputElaboratorComponent::on_update(const float deltaTime)
 {
-}*/
+	if (!motion_is_valid()) return;
+
+	auto nextPos = transform->get_transform()->getPosition() + sf::Vector2f(getDirectionVect().x * velocity * deltaTime, getDirectionVect().y * velocity * deltaTime);
+	printf("%f, %f\n", nextPos.x, nextPos.y);
+	transform->set_position(nextPos.x, nextPos.y);
+}

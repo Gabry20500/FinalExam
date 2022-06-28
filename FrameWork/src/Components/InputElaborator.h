@@ -6,31 +6,25 @@
 #include "controller.h"
 #include "rect_transform.h"
 
-#include <SFML/Graphics.hpp>
-
 class DECLSPEC InputElaboratorComponent : public Component
 {
 public:
 	InputElaboratorComponent();
-	~InputElaboratorComponent();
+	~InputElaboratorComponent() override;
 
 	float velocity;
 
-	sf::Vector2f getVelocity() const;
-	sf::Vector2f getDirectionVect() const;
+	[[nodiscard]] bool motion_is_valid()const { return (input->forWardMove || input->rightMove); }
 
-	void setXAxis(float x);
-	void setyAxis(float y);
+	[[nodiscard]] sf::Vector2f getVelocity() const;
+	[[nodiscard]] sf::Vector2f getDirectionVect() const;
 
-	//bool motionValid() const;
-	//void on_update(const float deltaTime) override;
+	void on_update(const float deltaTime) override;
 
 	//component for manage input
-	//RectTransform* transform = nullptr; //game object transform
-	//Controller* input = nullptr;   
+	RectTransform* transform = nullptr; //game object transform
+	Controller* input = nullptr;   
 
-protected:
-	float xAxis = 0.0f, yAxis = 0.0f;
 };
 #endif // !INPUTELABORATOR_H
 

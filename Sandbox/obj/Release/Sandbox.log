@@ -1,3 +1,6 @@
 ﻿  Application.cpp
-C:\Users\gabri\Documents\GitHub\FiorentinoGabriele_EndYearExamination\Sandbox\src\Application.cpp(44,10): warning C4244: 'return': conversion from 'float' to 'unsigned int', possible loss of data
-  Sandbox.vcxproj -> C:\Users\gabri\Documents\GitHub\FiorentinoGabriele_EndYearExamination\Sandbox\bin\Release\Sandbox.exe
+c1xx : fatal error C1083: Cannot open source file: 'src\Application.cpp': No such file or directory
+  main.cpp
+  time_manager.cpp
+c1xx : fatal error C1083: Cannot open source file: 'src\time_manager.cpp': No such file or directory
+  Generating Code...

@@ -7,6 +7,7 @@
 
 class DECLSPEC Sprite : public Area2d
 {
+	friend class Application;
 public:
 	Sprite();
 	~Sprite() override;

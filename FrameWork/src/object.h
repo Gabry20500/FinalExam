@@ -14,9 +14,10 @@ public:
 	void deactivate() { isActive = false; };
 	bool has_activity()const { return isActive; }
 	std::string get_name()const { return userName; }
-
-protected:
+	
 	bool isActive;
+protected:
+	
 	std::string userName;
 };
 

@@ -1,24 +1,23 @@
-#pragma once
-#include "time_manager.h"
+#ifndef APPLICATION_H
+#define APPLICATION_H
 
-#include <Classes/game_object.h>
+#include "time_manager.h"
+#include "Classes/game_object.h"
+#include "Components/rect_transform.h"
+#include "gameManager.h"
+#include "Components/InputElaborator.h"
+#include "dll_header.h"
 
 #include <vector>
 #include <SFML/Graphics.hpp>
 
-class Application{
+class DECLSPEC Application {
 
 	//friend class Controller;
 
 public:
-	Application() : newWindow(nullptr),
-		maxFPS(0),
-		fpsLimitEnabled(false),
-		backgroundColor(sf::Color::Black) 
-	{
-		initialize();
-	}
-	~Application(); 
+	Application(const float Width, const float Height, const char* WindowTitle);
+	~Application();
 
 	/// <summary>
 	/// Create window for the application
@@ -62,25 +61,24 @@ public:
 	/// </summary>
 	void enableFixedUpdate();
 	void disableFixedUpdate();
-	
-	
+
+
 	/// <summary>
 	/// Set milliseconds for fixed update
 	/// </summary>
 	/// <param name="milliseconds"></param>
 	void setMillisecondsForFixedUpdate(float milliseconds);
-	
+
 	/// <summary>
 	/// Set the color for the background
 	/// </summary>
 	/// <param name="color"></param>
 	void setBackgroundColor(sf::Color color);
-	void setBackgroundColor(sf::Uint8 red, sf::Uint8 green, sf::Uint8 blue, sf::Uint8 alpha);
+
+	GameManager gm;
 
 private:
 
-	void initialize();
-	void processInput();
 	void draw();
 	void processWindowEvents();
 	void fixedUpdate();
@@ -97,5 +95,10 @@ private:
 	bool fixedUpdateEnabled;
 	float msForFixedUpdate;
 	sf::Color backgroundColor;
-	std::vector<GameObject*> allEntities;
 };
+
+#endif // !APPLICATION_H
+
+
+
+

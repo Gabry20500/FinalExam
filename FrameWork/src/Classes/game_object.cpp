@@ -19,11 +19,6 @@ void GameObject::addComponent(Component* component)
 	components.push_back(component);
 }
 
-void GameObject::removeComponent(Component* component)
-{
-	//TODO
-}
-
 void GameObject::on_fixed_update(const float delta_time)
 {
 	for (auto item : components)
@@ -36,6 +31,6 @@ void GameObject::on_update(const float delta_time)
 {
 	for (auto item : components)
 	{
-		if (item->isActive && item->tickEnabled()) { item->on_fixed_update(delta_time); }
+		if (item->isActive && item->tickEnabled()) { item->on_update(delta_time); }
 	}
 }

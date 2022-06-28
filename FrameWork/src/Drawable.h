@@ -1,9 +1,10 @@
-#ifndef DRAWH
-#define DRAWH
+#ifndef DRAW_H
+#define DRAW_H
 
-#include <object.h>
+#include "object.h"
+#include "dll_header.h"
 
-class Draw
+class DECLSPEC Draw
 {
 	friend class Application;
 

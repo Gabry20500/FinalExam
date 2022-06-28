@@ -1,2 +1,12 @@
-﻿     Creating library bin\Release\FrameWork.lib and object bin\Release\FrameWork.exp
+﻿  Application.cpp
+C:\Users\gabri\Documents\GitHub\FiorentinoGabriele_EndYearExamination\FrameWork\src\Application.cpp(11,56): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+C:\Users\gabri\Documents\GitHub\FiorentinoGabriele_EndYearExamination\FrameWork\src\Application.cpp(11,49): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+C:\Users\gabri\Documents\GitHub\FiorentinoGabriele_EndYearExamination\FrameWork\src\Application.cpp(39,10): warning C4244: 'return': conversion from 'float' to 'unsigned int', possible loss of data
+  guidableCharacter.cpp
+C:\Users\gabri\Documents\GitHub\FiorentinoGabriele_EndYearExamination\FrameWork\src\object.h(21,14): warning C4251: 'Object::userName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Object'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xstring(4905): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\gabri\Documents\GitHub\FiorentinoGabriele_EndYearExamination\FrameWork\src\Classes\game_object.h(79,26): warning C4251: 'GameObject::components': class 'std::vector<Component *,std::allocator<Component *>>' needs to have dll-interface to be used by clients of class 'GameObject'
+C:\Users\gabri\Documents\GitHub\FiorentinoGabriele_EndYearExamination\FrameWork\src\Classes\game_object.h(22): message : see declaration of 'std::vector<Component *,std::allocator<Component *>>'
+  Generating Code...
+     Creating library bin\Release\FrameWork.lib and object bin\Release\FrameWork.exp
   FrameWork.vcxproj -> C:\Users\gabri\Documents\GitHub\FiorentinoGabriele_EndYearExamination\FrameWork\bin\Release\FrameWork.dll

@@ -1,9 +1,11 @@
 #ifndef TIMEMANAGERH
 #define TIMEMANAGERH
 
+#include "dll_header.h"
+
 #include <SFML/System.hpp>
 
-struct GameTimeManager
+struct DECLSPEC GameTimeManager
 {
 	GameTimeManager() {};
 	virtual ~GameTimeManager() {};

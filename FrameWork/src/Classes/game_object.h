@@ -9,8 +9,13 @@
 #include "tickable.h"
 #include "dll_header.h" 
 
+class Component;
+
+
 class DECLSPEC GameObject : public Object, public Tickable
 {
+	friend class Window;
+	friend class GameManager;
 
 public:
 	GameObject(const std::string name, const bool is_active = true);
@@ -22,15 +27,13 @@ public:
 	/// </summary>
 	/// <param name="component"></param>
 	void addComponent(Component* component);
-	void removeComponent(Component* component);
-
 
 	/// <summary>
 	/// Return the first components of the given type from the attached components
 	/// </summary>
 	/// <typeparam name="T">the component to add</typeparam>
 	/// <returns></returns>
-	template<class T, class = Component>  T* get_component() {
+	template<class T, class = Component>  T* get_component()const {
 
 		if (components.size() == 0) return nullptr;
 
@@ -66,6 +69,7 @@ public:
 
 		return result;
 	}
+
 
 	// Inherited via Tickable
 	virtual void on_fixed_update(const float delta_time) override;

@@ -2,8 +2,7 @@
 #define RENDERER2D_H
 
 #include "component.h"
-#include "Components/rect_transform.h"
-#include "Classes/game_object.h"
+#include "Classes/area2d.h"
 #include "dll_header.h" 
 
 #include <SFML/Graphics.hpp>
