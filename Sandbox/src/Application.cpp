@@ -12,7 +12,7 @@
 #include "Components/controller.h"
 #include <Classes/sprite.h>
 #include <Classes/area2d.h>
-#include <inputElaborator.h>
+#include <inputEla>
 
 //Standart libraries
 #include <iostream>
