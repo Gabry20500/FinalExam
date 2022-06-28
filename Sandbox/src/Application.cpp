@@ -86,13 +86,13 @@ void Application::setBackgroundColor(sf::Uint8 red, sf::Uint8 green, sf::Uint8 b
 void Application::initialize()
 {
 	auto background = new Sprite();
-	background->renderer->set_texture_source("res/background/prato.jpg", true, true);
+	background->renderer->set_texture_source("res/background/back.jpg", true, true);
 	background->rectTransform->set_scale(1920, 1080);
 	allEntities.push_back(background);
 
 	const auto character = new Sprite();
 	character->renderer->set_texture_source("res/Character/player.png", true, false);
-	character->rectTransform->set_scale(64, 64);
+	character->rectTransform->set_scale(180, 180);
 	character->rectTransform->set_position(960 - 32, 540 - 32);
 	character->addComponent(new Controller());
 	allEntities.push_back(character);
@@ -112,37 +112,35 @@ void Application::processInput()
 
 		for each (auto controller in controllers)
 		{
-			sf::Keyboard::Key key1;
-			sf::Keyboard::Key key2;
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 			{
-				key1 = sf::Keyboard::Up;
+				controller->on_input(sf::Keyboard::Up);
 			}
-			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 			{
-				key1 = sf::Keyboard::Down;
+				controller->on_input(sf::Keyboard::Down);
 			}
 			else
 			{
-				key1 = sf::Keyboard::Unknown;
+				controller->on_input(sf::Keyboard::Unknown);
 			}
 
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) || sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 			{
-				key2 = sf::Keyboard::Left;
+				controller->on_input(sf::Keyboard::Left);
 			}
 			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 			{
-				key2 = sf::Keyboard::Left;
+				controller->on_input(sf::Keyboard::Right);
 			}
 			else
 			{
-				key2 = sf::Keyboard::Unknown;
+				controller->on_input(sf::Keyboard::Unknown);
 			}
 
-			sf::Keyboard::Key inputs[] = { key1, key2 };
-			controller->on_input(inputs);
+			
+			
 
 		}
 	}

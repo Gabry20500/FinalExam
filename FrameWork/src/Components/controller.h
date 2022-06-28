@@ -14,7 +14,7 @@ class DECLSPEC Controller : public Component
 public:
 	Controller ();
 	~Controller () override;
-	virtual void on_input(sf::Keyboard::Key input[2]);
+	virtual void on_input(sf::Keyboard::Key input);
 
 protected:
 	void on_update(const float delta_time)override;
