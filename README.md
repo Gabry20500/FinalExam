@@ -41,7 +41,7 @@ This framework (which for now does not have a name) allows you to create a basic
     doxygen FinalExamDocumentation
 
     ```
-    * Find the documentation in the Directory: doc->html-> Index.html 
+    * Find the documentation in the Directory: doc->html->Index.html 
 
 
 ### README.md written by Gabriele Fiorentino :+1:
