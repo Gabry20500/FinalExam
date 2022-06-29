@@ -12,7 +12,14 @@ This framework (which for now does not have a name) allows you to create a basic
 
 - In the cmd write the following command:
     ```
-    premake5 vs(Version of your Visual Studio)
+    premake5 vs(Version of your Visual Studio ex. 2019 or 2022)
 
     ```
-    
+
+- If you want to try the test level created by me, 
+    1. Open the solution, 
+    2. Change from **Debug** to **Release**
+    ![This is an image](https://www.andreaminini.com/data/andreaminini/come-vedere-la-configurazione-release-debug-di-visual-basic.gif)
+    3. Build for **first** FrameWork and **then** SandBox
+    4. Click on **Local Windows Debugger**
+    5. Test the player movement
