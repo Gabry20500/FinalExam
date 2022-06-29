@@ -3,7 +3,12 @@
 
 #include <iostream>
 
-Controller::Controller() : Component("Controller") { }
+Controller::Controller() : Component("Controller") { 
+	forWardMove = false;
+	rightMove = true;
+	xAxis = 0;
+	yAxis = 0;
+}
 
 Controller::~Controller() = default;
 

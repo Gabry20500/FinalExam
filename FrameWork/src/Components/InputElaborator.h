@@ -22,8 +22,8 @@ public:
 	void on_update(const float deltaTime) override;
 
 	//component for manage input
-	RectTransform* transform = nullptr; //game object transform
-	Controller* input = nullptr;   
+	RectTransform* transform; //game object transform
+	Controller* input;   
 
 };
 #endif // !INPUTELABORATOR_H

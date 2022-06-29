@@ -23,7 +23,7 @@ Render2d::Render2d(std::string path, bool smooth, bool repeat) : Component("Rend
 	const auto rect = get_owner()->get_component<RectTransform, RectTransform>();
 	if (!rect)
 	{
-		printf("can't load rect transform from component owner\n");
+		printf("can't load rect transform\n");
 		system("pause");
 		return;
 	}
@@ -45,7 +45,7 @@ void Render2d::set_texture_source(std::string path, bool smooth, bool repeat)
 	fount = new sf::Texture();
 	if (!fount->loadFromFile(path)) {
 
-		printf("Can't load texture at path[%s]\n", path.c_str());
+		printf("Can't load [%s]\n", path.c_str());
 		return;
 	}
 
@@ -53,7 +53,8 @@ void Render2d::set_texture_source(std::string path, bool smooth, bool repeat)
 	fount->setRepeated(repeat);
 
 	const auto keeper = dynamic_cast<Area2d*>(get_owner());
-	if (!keeper) {
+	if (!keeper) 
+	{
 		printf("Owner not found\n");
 		system("pause");
 		return;

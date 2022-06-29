@@ -2,7 +2,6 @@
 
 Sprite::Sprite() : Area2d()
 {
-	rectTransform = new RectTransform();
 	renderer = new Render2d();
 	addComponent(renderer);
 }

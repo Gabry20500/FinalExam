@@ -11,27 +11,11 @@
 #include <vector>
 #include <SFML/Graphics.hpp>
 
-class DECLSPEC Application {
-
-	//friend class Controller;
-
+class DECLSPEC Application 
+{
 public:
 	Application(const float Width, const float Height, const char* WindowTitle);
 	~Application();
-
-	/// <summary>
-	/// Create window for the application
-	/// </summary>
-	/// <param name="windowWidth">the window width</param>
-	/// <param name="windowHeight">the window height</param>
-	/// <param name="windowTitle">window main title</param>
-	void createWindow(unsigned int Width, unsigned int Height, const char* Title);
-
-	/// <summary>
-	/// If the return is FALSE the window is open
-	/// </summary>
-	/// <returns> TRUE or FALSE</returns>
-	bool isRunning()const;
 
 	/// <summary>
 	/// Execute game loop
@@ -86,13 +70,16 @@ private:
 	void updateGameTime();
 
 	sf::RenderWindow* newWindow;
-	GameTimeManager tm;
-	sf::Time lastTime, inGameTime;
-	float pastTime;
-	float lag;
 	unsigned maxFPS;
 	bool fpsLimitEnabled;
 	bool fixedUpdateEnabled;
+
+	GameTimeManager tm;
+	sf::Time lastTime, inGameTime;
+
+	float pastTime;
+	float lag;
+	
 	float msForFixedUpdate;
 	sf::Color backgroundColor;
 };

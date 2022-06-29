@@ -19,21 +19,6 @@ Application::~Application()
 	delete newWindow;
 }
 
-void Application::createWindow(unsigned int Width, unsigned int Height, const char* Title)
-{
-	newWindow = new sf::RenderWindow(sf::VideoMode(Width, Height), Title);
-	if (!newWindow)
-	{
-		std::cout << "Window inizialization fail\n";
-		return;
-	}
-}
-
-bool Application::isRunning() const
-{
-	return newWindow->isOpen();
-}
-
 unsigned Application::getFPS() const
 {
 	return 1/pastTime;
@@ -41,7 +26,7 @@ unsigned Application::getFPS() const
 
 void Application::setMaxFPS(unsigned limit)
 {
-	maxFPS = limit;
+	this->maxFPS = limit;
 }
 
 void Application::enableFPSLimit()
@@ -104,11 +89,9 @@ void Application::processWindowEvents()
 
 void Application::fixedUpdate()
 {
-	for (auto item : gm.allEntities) {
-		if (item->isActive && item->tickEnabled())
-		{
-			item->on_fixed_update(pastTime);
-		}
+	for (auto item : gm.allEntities)
+	{
+		if (item->isActive && item->tickEnabled()) item->on_fixed_update(pastTime);
 	}
 }
 
@@ -128,7 +111,6 @@ void Application::updateGameTime()
 
 void Application::execute()
 {
-	auto input = new InputElaboratorComponent;
 	lastTime = tm.getInGameTime();
 	while (newWindow->isOpen())
 	{
@@ -141,13 +123,16 @@ void Application::execute()
 			while (lag < msForFixedUpdate)
 			{
 				fixedUpdate();
-				lag = lag - msForFixedUpdate;
+				lag -= msForFixedUpdate;
 			}
 		}
 
 		update();
 		draw();
-		if (fpsLimitEnabled) sf::sleep(sf::seconds(1.0f / maxFPS));
+		if (fpsLimitEnabled) 
+		{
+			sf::sleep(sf::seconds((1.0f / maxFPS)));
+		}
 	}
 
 }
