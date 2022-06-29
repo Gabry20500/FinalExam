@@ -17,9 +17,10 @@ This framework (which for now does not have a name) allows you to create a basic
     ```
 
 - If you want to try the test level created by me, 
+
     1. Open the solution, 
     2. Change from **Debug** to **Release**
-    
+
 ![This is an image](https://www.andreaminini.com/data/andreaminini/come-vedere-la-configurazione-release-debug-di-visual-basic.gif)
     
     3. Build for **first** FrameWork and **then** SandBox
