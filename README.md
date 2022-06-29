@@ -34,7 +34,14 @@ This framework (which for now does not have a name) allows you to create a basic
 
 - If you want to use the FrameWork for you project download the release and in this you foun all.
 
+- If you have installed Doxygen and you want to see the documentation, follow these steps:
+    * Go in the **solution folder**
+    * Open cmd and write following command:
+    ```
+    doxygen FinalExamDocumentation
 
+    ```
+    * Find the documentation in the Directory: doc->html-> Index.html 
 
 
 ### README.md written by Gabriele Fiorentino :+1:
