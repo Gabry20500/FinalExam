@@ -18,11 +18,15 @@ This framework (which for now does not have a name) allows you to create a basic
 
 - If you want to try the test level created by me, 
 
-    1. Open the solution, 
-    2. Change from **Debug** to **Release**
+    * Open the solution, 
+    * Change from **Debug** to **Release** (Watch [*Image1*](#Image1))
+    * Build for **first** FrameWork and **then** SandBox
+    * Click on **Local Windows Debugger**
+    * Test the player movement
+
+
+#####Image1
 
 ![This is an image](https://www.andreaminini.com/data/andreaminini/come-vedere-la-configurazione-release-debug-di-visual-basic.gif)
     
-    3. Build for **first** FrameWork and **then** SandBox
-    4. Click on **Local Windows Debugger**
-    5. Test the player movement
+    
